@@ -1,0 +1,8 @@
+[Unit]
+After=svnserve.service
+
+[Service]
+ExecStart=/usr/local/lib/deploy/execute.sh
+
+[Install]
+WantedBy=default.target
