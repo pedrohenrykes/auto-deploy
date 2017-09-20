@@ -56,6 +56,7 @@ class Deploy:
         if int(localRevision[18:]) < int(remoteRevision[18:]):
             self.createLog(workingPath, "################################################", "#####")
             self.createLog(workingPath, "Removendo alteracoes na copia de trabalho...", "INFOR")
+            self.executeShell("svn revert -R ", workingPath)
             self.executeShell("svn cleanup ", workingPath)
             self.createLog(workingPath, "Atualizando arquivos na copia de trabalho...", "INFOR")
             self.executeShell("svn update ", workingPath)
